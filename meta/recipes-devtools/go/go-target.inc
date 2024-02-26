@@ -43,10 +43,14 @@ do_install() {
 		ln -sf ../${baselib}/go/bin/$name ${D}${bindir}/
 	done
 	rm -rf ${D}${libdir}/go/src
+
+	# install GDB extension
+	install -Dm644 ${B}/src/runtime/runtime-gdb.py ${D}${exec_prefix}/src/go/runtime-gdb.py
 }
 
-PACKAGES = "${PN} ${PN}-dev"
+PACKAGES = "${PN} ${PN}-dev ${PN}-gdb"
 FILES:${PN} = "${libdir}/go/bin ${libdir}/go/pkg/tool/${TARGET_GOTUPLE} ${bindir}"
+FILES:${PN}-gdb = "${exec_prefix}/src/go/runtime-gdb.py"
 RDEPENDS:${PN} = "go-runtime"
 INSANE_SKIP:${PN} = "ldflags"
 
