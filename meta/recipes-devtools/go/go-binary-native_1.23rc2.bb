@@ -8,7 +8,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=5d4950ecb7b26d2c5e4e7b4e0dd74707"
 PROVIDES = "go-native"
 
 # Checksums available at https://go.dev/dl/
-SRC_URI = "https://dl.google.com/go/go${PV}.${BUILD_GOOS}-${BUILD_GOARCH}.tar.gz;name=go_${BUILD_GOTUPLE}"
+_PV = "1.22.5"
+SRC_URI = "https://dl.google.com/go/go${_PV}.${BUILD_GOOS}-${BUILD_GOARCH}.tar.gz;name=go_${BUILD_GOTUPLE}"
 SRC_URI[go_linux_amd64.sha256sum] = "904b924d435eaea086515bc63235b192ea441bd8c9b198c507e85009e6e4c7f0"
 SRC_URI[go_linux_arm64.sha256sum] = "8d21325bfcf431be3660527c1a39d3d9ad71535fabdf5041c826e44e31642b5a"
 SRC_URI[go_linux_ppc64le.sha256sum] = "5312bb420ac0b59175a58927e70b4660b14ab7319aab54398b6071fabcbfbb09"
